@@ -1,4 +1,6 @@
+# TODO: optflags
 Summary:	squidwall - a fast and secure redirector for squid
+Summary(pl):	squidwall - szybie i bezpieczne przekierowywanie dla squida
 Name:		squidwall
 Version:	0.1
 Release:	0.1
@@ -17,6 +19,14 @@ with security in mind. It enables the administrator to build an easy
 to use Web interface for controlling user-, host-, or IP-based access
 to squid. It also does pass-through antivirus scanning with clamav.
 
+%description -l pl
+Squidwall to szybkie, ma³e i bezpieczne narzêdzie do przekierowywania
+dla squida. Jest napisane z my¶l± o bezpieczeñstwie. Umo¿liwia
+administratorowi stworzenie ³atwego w u¿yciu interfejsu WWW do
+sterowania dostêpem do squida w oparciu o u¿ytkownika, host lub IP.
+Wykonuje tak¿e przezroczyste skanowanie antywirusowe przy u¿yciu
+clamava.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -26,9 +36,7 @@ to squid. It also does pass-through antivirus scanning with clamav.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT/%{_bindir}
-install -d $RPM_BUILD_ROOT/var/log/squid
+install -d $RPM_BUILD_ROOT{%{_bindir},/var/log/squid}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -38,6 +46,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-
-%attr(711,squid,squid) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/*
 %attr(600,squid,squid) /var/log/squid/squidwall.log
