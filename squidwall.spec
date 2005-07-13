@@ -1,6 +1,6 @@
 # TODO: optflags
 Summary:	squidwall - a fast and secure redirector for squid
-Summary(pl):	squidwall - szybie i bezpieczne przekierowywanie dla squida
+Summary(pl):	squidwall - szybkie i bezpieczne przekierowywanie dla squida
 Name:		squidwall
 Version:	0.1
 Release:	0.1
