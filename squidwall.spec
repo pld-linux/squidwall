@@ -1,6 +1,6 @@
 # TODO: optflags
 Summary:	squidwall - a fast and secure redirector for squid
-Summary(pl):	squidwall - szybkie i bezpieczne przekierowywanie dla squida
+Summary(pl.UTF-8):   squidwall - szybkie i bezpieczne przekierowywanie dla squida
 Name:		squidwall
 Version:	0.2
 Release:	0.1
@@ -19,12 +19,12 @@ with security in mind. It enables the administrator to build an easy
 to use Web interface for controlling user-, host-, or IP-based access
 to squid. It also does pass-through antivirus scanning with clamav.
 
-%description -l pl
-Squidwall to szybkie, ma≥e i bezpieczne narzÍdzie do przekierowywania
-dla squida. Jest napisane z my∂l± o bezpieczeÒstwie. Umoøliwia
-administratorowi stworzenie ≥atwego w uøyciu interfejsu WWW do
-sterowania dostÍpem do squida w oparciu o uøytkownika, host lub IP.
-Wykonuje takøe przezroczyste skanowanie antywirusowe przy uøyciu
+%description -l pl.UTF-8
+Squidwall to szybkie, ma≈Çe i bezpieczne narzƒôdzie do przekierowywania
+dla squida. Jest napisane z my≈õlƒÖ o bezpiecze≈Ñstwie. Umo≈ºliwia
+administratorowi stworzenie ≈Çatwego w u≈ºyciu interfejsu WWW do
+sterowania dostƒôpem do squida w oparciu o u≈ºytkownika, host lub IP.
+Wykonuje tak≈ºe przezroczyste skanowanie antywirusowe przy u≈ºyciu
 clamava.
 
 %prep
