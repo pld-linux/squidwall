@@ -33,7 +33,7 @@ clamava.
 
 %build
 %{__make} \
-	CFLAGS="$OPTFLAGS %{rpmcflags}" \
+	CFLAGS="%{rpmcflags}" \
 	LDFLAGS="%{rpmldflags} %{_libdir}/libowfat.a"
 
 %install
