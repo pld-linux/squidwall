@@ -1,20 +1,29 @@
-diff -ur squidwall-0.4e/Makefile squidwall-0.4e.new/Makefile
 --- squidwall-0.4e/Makefile	2006-09-02 23:37:23.000000000 +0200
-+++ squidwall-0.4e.new/Makefile	2008-04-02 10:31:03.036855507 +0200
-@@ -13,8 +13,8 @@
++++ squidwall-0.4e/Makefile-new	2008-04-02 11:08:57.000000000 +0200
+@@ -13,11 +13,11 @@
  
  DIET	= $(shell test -x /opt/diet/bin/diet && echo /opt/diet/bin/diet)
  CC	= $(DIET) gcc
 -CFLAGS	= -Os -Wall -pipe -I../libowfat
 -LDFLAGS	= ../libowfat/libowfat.a
-+CFLAGS	= -Wall -pipe -I/usr/include/libowfat/
++OPTFLAGS	= -Wall -pipe -I/usr/include/libowfat/
 +LDFLAGS	= /usr/lib/libowfat.a
  
  # extraflags
- CFLAGS += -W
-@@ -59,4 +59,3 @@
+-CFLAGS += -W
++OPTFLAGS += -W
+ #CFLAGS += -Wpointer-arith
+ #CFLAGS += -Wswitch
+ #CFLAGS += -Wmissing-prototypes
+@@ -53,10 +53,9 @@
+ 	rm -f $(OBJS) fget.o squidwall.o $(PRGS)
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) -c $< -o $@
++	$(CC) $(CFLAGS) $(OPTFLAGS) -c $< -o $@
+ 
+ install:
  	rm -f $(SBINDIR)/squidwall
  	cp -f squidwall $(SBINDIR)/squidwall
  
 -include .depend
-Tylko w squidwall-0.4e.new/: Makefile~
