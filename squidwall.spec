@@ -3,7 +3,7 @@ Summary:	squidwall - a fast and secure redirector for squid
 Summary(pl.UTF-8):	squidwall - szybkie i bezpieczne przekierowywanie dla squida
 Name:		squidwall
 Version:	0.4e
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://www.mcmilk.de/projects/squidwall/dl/%{name}-%{version}.tar.bz2
@@ -33,7 +33,8 @@ clamava.
 
 %build
 %{__make} \
-	CFLAGS="$OPTFLAGS %{rpmcflags}"
+	CFLAGS="$OPTFLAGS %{rpmcflags}" \
+	LDFLAGS="%{rpmldflags} %{_libdir}/libowfat.a"
 
 %install
 rm -rf $RPM_BUILD_ROOT
