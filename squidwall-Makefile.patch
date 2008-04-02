@@ -1,37 +1,15 @@
-diff -ur squidwall-0.1/Makefile squidwall-0.1.new/Makefile
---- squidwall-0.1/Makefile	2005-07-11 10:31:43.000000000 +0000
-+++ squidwall-0.1.new/Makefile	2005-07-12 07:52:17.308183232 +0000
-@@ -3,15 +3,15 @@
- # - change it to fit your needs
- # - see also params.h
+diff -ur squidwall-0.4e/Makefile squidwall-0.4e.new/Makefile
+--- squidwall-0.4e/Makefile	2006-09-02 23:37:23.000000000 +0200
++++ squidwall-0.4e.new/Makefile	2008-04-02 08:59:37.781992367 +0200
+@@ -13,8 +13,8 @@
  
--BINDIR		= /usr/bin
--LOGDIR		= /var/log/squid
--SQUID_USER	= proxy
--SQUID_GROUP	= proxy
-+BINDIR		= ${DESTDIR}/usr/bin
-+LOGDIR		= ${DESTDIR}/var/log/squid
-+SQUID_USER	= squid
-+SQUID_GROUP	= squid
- 
- DIET	= $(shell basename `which diet 2>/dev/null` 2>/dev/null)
+ DIET	= $(shell test -x /opt/diet/bin/diet && echo /opt/diet/bin/diet)
  CC	= $(DIET) gcc
- CFLAGS	= -Os -Wall -pipe -I../libowfat
+-CFLAGS	= -Os -Wall -pipe -I../libowfat
 -LDFLAGS	= ../libowfat/libowfat.a
++CFLAGS	= -Os -Wall -pipe -I/usr/include/libowfat/
 +LDFLAGS	= /usr/lib/libowfat.a
  
  # extraflags
- #CFLAGS += -W
-@@ -47,8 +47,8 @@
- install:
- 	rm -f $(BINDIR)/squidwall
- 	cp -f squidwall $(BINDIR)/squidwall
--	chown $(SQUID_USER).$(SQUID_GROUP) $(BINDIR)/squidwall
--	chmod 711 $(BINDIR)/squidwall
-+#	chown $(SQUID_USER).$(SQUID_GROUP) $(BINDIR)/squidwall
-+#	chmod 711 $(BINDIR)/squidwall
- 	touch $(LOGDIR)/squidwall.log
--	chown $(SQUID_USER).$(SQUID_GROUP) $(LOGDIR)/squidwall.log
--	chmod 600 $(LOGDIR)/squidwall.log
-+#	chown $(SQUID_USER).$(SQUID_GROUP) $(LOGDIR)/squidwall.log
-+#	chmod 600 $(LOGDIR)/squidwall.log
+ CFLAGS += -W
+Tylko w squidwall-0.4e.new/: Makefile~
