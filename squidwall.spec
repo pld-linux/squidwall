@@ -2,12 +2,12 @@
 Summary:	squidwall - a fast and secure redirector for squid
 Summary(pl.UTF-8):	squidwall - szybkie i bezpieczne przekierowywanie dla squida
 Name:		squidwall
-Version:	0.2
+Version:	0.4e
 Release:	0.1
 License:	GPL
 Group:		Applications
 Source0:	http://www.mcmilk.de/projects/squidwall/dl/%{name}-%{version}.tar.bz2
-# Source0-md5:	ba09f24ed8a894d560fc2d1bdcdeed43
+# Source0-md5:	010887ec0fb97ea098dac327e734b2ab
 Patch0:		%{name}-Makefile.patch
 URL:		http://www.mcmilk.de/projects/squidwall/
 BuildRequires:	libowfat
@@ -36,7 +36,8 @@ clamava.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},/var/log/squid}
+install -d $RPM_BUILD_ROOT{%{_sbindir},/var/log/squid}
+> $RPM_BUILD_ROOT/var/log/squid/squidwall.log
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -46,5 +47,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/*
-%attr(600,squid,squid) /var/log/squid/squidwall.log
+%attr(755,root,root) %{_sbindir}/*
+%ghost %attr(600,squid,squid) /var/log/squid/squidwall.log
