@@ -50,4 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/*
-%ghost %attr(600,squid,squid) /var/log/squid/squidwall.log
+%attr(600,squid,squid) %ghost /var/log/squid/squidwall.log
