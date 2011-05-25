@@ -2,12 +2,12 @@
 Summary:	squidwall - a fast and secure redirector for squid
 Summary(pl.UTF-8):	squidwall - szybkie i bezpieczne przekierowywanie dla squida
 Name:		squidwall
-Version:	0.4f
+Version:	0.5
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://www.mcmilk.de/projects/squidwall/dl/%{name}-%{version}.tar.bz2
-# Source0-md5:	0c71d8c4f91c6a4d43dee740bc4e6225
+# Source0-md5:	ca60aec08e149623ed1a3b0078360b8d
 Patch0:		%{name}-Makefile.patch
 URL:		http://www.mcmilk.de/projects/squidwall/
 BuildRequires:	libowfat
